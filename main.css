@@ -1,0 +1,109 @@
+* {
+    margin:0px;
+}
+
+body {
+    background-image: linear-gradient(purple, purple, black);
+}
+.container {
+    display:grid;
+    height:100vh;
+    grid-template-columns: 0.3fr 0.6fr 0.3fr;
+    grid-template-rows: 0.1fr 0.8fr 0.2fr 0.1fr ;
+    grid-template-areas:
+    "nav nav nav"
+    "sidebar1 main sidebar2"
+    "sidebar1 content1 sidebar2"
+    "footer footer footer";   
+    grid-gap: 0.2rem;
+}
+
+nav {
+    background-image: linear-gradient(darkblue, purple);
+    grid-area:nav;
+}
+
+main {
+    padding: 2rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    background-color:cornflowerblue;
+    grid-area:main;
+    background-image: radial-gradient(purple, darkblue, black);
+}
+
+#appNameText {
+    color: orange;
+    text-shadow: 3px 3px 5px purple;
+}
+
+#movieReviewsText {
+    color: plum;
+    text-shadow: 3px 3px 5px black;
+}
+
+#rateYourFavoriteMoviesText {
+    color:plum;
+    text-shadow: 3px 3px 5px black;
+}
+
+#moviePosterHolder {
+    
+}
+
+#moviePoster {
+    width: 50%;
+    height: 50%;
+    border: orange 5px solid;
+    box-shadow: 5px 5px 10px black;
+}
+
+footer {
+    background-color: black;
+    grid-area:footer;
+}
+
+#content1 {
+    text-align: center;
+    background-image:linear-gradient(darkblue, black);
+    grid-area:content1;
+}
+
+#reviewThisMovieText {
+    font-family: sans-serif;
+    color: plum;
+}
+
+#topRatedMovies {
+    color:plum;
+    text-shadow: 3px 3px 5px black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    padding-top: 1rem;      /* padding-top */
+    background-image: linear-gradient(purple, darkblue, black);
+    
+    grid-area:sidebar1;
+}
+
+#sidebar2 {
+    color:plum;
+    text-shadow: 3px 3px 5px black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    padding-top: 1rem;      /* padding-top */
+    background-image: linear-gradient(purple, darkblue, black);
+
+    grid-area:sidebar2;
+}
+
+@media only screen and (max-width:550px) {
+    .container {
+        grid-template-columns:1fr;
+        grid-template-rows: 0.1fr 0.8fr 0.2fr 0.1fr 1px 1px;
+        grid-template-areas:
+        "nav"
+        "main"
+        "content1"
+        "footer";
+    }
+}
