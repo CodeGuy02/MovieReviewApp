@@ -2,13 +2,26 @@
     margin:0px;
 }
 
+.table {
+    display: table;
+}
+
+.cell {
+    display: table-cell;
+}
+
+.row {
+    display: table-row;
+}
+
 body {
     background-image: linear-gradient(purple, purple, black);
 }
+
 .container {
     display:grid;
     height:100vh;
-    grid-template-columns: 0.3fr 0.6fr 0.3fr;
+    grid-template-columns: 0.5fr 520px 0.5fr;
     grid-template-rows: 0.1fr 0.8fr 0.2fr 0.1fr ;
     grid-template-areas:
     "nav nav nav"
@@ -21,6 +34,43 @@ body {
 nav {
     background-image: linear-gradient(darkblue, purple);
     grid-area:nav;
+
+    font-family: sans-serif;
+    color: goldenrod;
+    text-shadow: 2px 2px 5px hotpink;
+    
+
+    padding-top: 5%;
+    
+}
+
+#navTable {
+    width: 100%;
+}
+
+#navCell {
+    width:16%;
+}
+
+#Reviews {
+    width: 100%;
+
+    text-align: center;
+    
+}
+
+#Reviews:hover {
+    transform: scale(1.1);
+}
+
+#AddReview {
+    width: 100%;
+    text-align: center;
+    
+}
+
+#AddReview:hover {
+    transform: scale(1.1);
 }
 
 main {
@@ -30,6 +80,8 @@ main {
     background-color:cornflowerblue;
     grid-area:main;
     background-image: radial-gradient(purple, darkblue, black);
+
+    
 }
 
 #appNameText {
@@ -49,6 +101,7 @@ main {
 
 #moviePosterHolder {
     
+    border: 1px solid white;
 }
 
 #moviePoster {
@@ -58,9 +111,15 @@ main {
     box-shadow: 5px 5px 10px black;
 }
 
+#moviePoster:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 10px orchid;
+}
 footer {
     background-color: black;
     grid-area:footer;
+
+    
 }
 
 #content1 {
@@ -74,6 +133,18 @@ footer {
     color: plum;
 }
 
+#reviewMovieButton {
+    color:orange;
+    border:orchid 3px solid;
+    border-radius: 10px;
+    background-image: linear-gradient(plum, purple);
+}
+
+#reviewMovieButton:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 10px orchid;
+}
+
 #topRatedMovies {
     color:plum;
     text-shadow: 3px 3px 5px black;
@@ -83,6 +154,20 @@ footer {
     background-image: linear-gradient(purple, darkblue, black);
     
     grid-area:sidebar1;
+
+    border: 1px plum solid;
+    border-radius:30px;
+}
+
+#popcornImage {
+    align-content: bottom;
+    border:orange solid 2px;
+    border-radius: 15px;
+}
+
+#popcornImage:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 10px orchid;
 }
 
 #sidebar2 {
@@ -94,16 +179,41 @@ footer {
     background-image: linear-gradient(purple, darkblue, black);
 
     grid-area:sidebar2;
+
+    border: 1px plum solid;
+    border-radius:30px;
 }
 
-@media only screen and (max-width:550px) {
+@media only screen and (max-width:850px) {
     .container {
         grid-template-columns:1fr;
-        grid-template-rows: 0.1fr 0.8fr 0.2fr 0.1fr 1px 1px;
+        grid-template-rows: 10% 100% 40% 30% 30% 10%; /* fr units did not work? */
         grid-template-areas:
         "nav"
         "main"
         "content1"
+        "sidebar1"
+        "sidebar2"
         "footer";
     }
+
+    #moviePosterHolder {
+        width: 100%;
+        
+        border: 1px solid white;        
+    }
+
+    #moviePoster {  /* gives images proper scale on mobile */
+        width:60%;
+        height:auto;
+
+        scale:10%;
+    }
+
+    #navCell {
+        width:1%;   /* gives navbar items extra room on mobile */
+    }
+
+
+
 }
